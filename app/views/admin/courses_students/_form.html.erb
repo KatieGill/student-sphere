@@ -1,0 +1,12 @@
+<%= form_with(model: [:admin, course, courses_students]) do |form|%>
+ <%= render "admin/shared/error", model: courses_students %>
+ 
+  <div class="form-group mb-3">
+    <%= form.label :student_id %>
+    <%= form.number_field :student_id, class: "form-control form-control-lg" %>
+  </div>
+  <div class="form-group">
+    <%= form.submit class: "btn btn-primary my-2" %>
+  </div>
+  
+  <%end%>

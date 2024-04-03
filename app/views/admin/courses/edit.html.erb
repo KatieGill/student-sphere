@@ -1,0 +1,9 @@
+<div class="col-lg-8">
+  <h1>Edit course</h1>
+
+  <%= render "form", course: @course %>
+
+  <div>
+    <%= link_to "Back to course", admin_course_path(@course), class: "btn btn-secondary" %>
+  </div>
+</div>

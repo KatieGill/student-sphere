@@ -1,0 +1,16 @@
+<div class="col-lg-10">
+  <div class="card rounded-0 shadow mt-5 mb-5">
+    <div class="card-body">
+    <% if notice.present? %>
+      <p class="alert alert-primary"><%= notice %></p>
+    <% end %> 
+    <h1>Project Details</h1>
+
+    <p><strong>Name: </strong><%= @project.name %></p>
+    <p><strong>Description: </strong><%= @project.description %></p>
+
+    <%= link_to 'Back to projects', admin_projects_path, class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_admin_project_path(@project), class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>

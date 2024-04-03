@@ -1,0 +1,26 @@
+<div class="col-lg-10">
+  <% if notice.present? %>
+    <p class="alert alert-primary"><%= notice %></p>
+  <% end %> 
+ 
+  <h1>Courses</h1>
+  <%= link_to "New course", new_course_path, class: "btn btn-primary mb-2" %>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Course</th> 
+        <th colspan="3">Actions</th>  
+      </tr>
+    </thead>
+    <tbody>
+      <% @courses.each do |course| %>
+        <tr>
+          <td><%= course.name %></td>
+          <td><%= link_to 'View', course %></td>
+          <td><%= link_to 'Edit', edit_course_path(course) %></td>
+          <td><%= link_to 'Delete', course, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

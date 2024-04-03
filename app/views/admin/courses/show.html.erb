@@ -1,0 +1,18 @@
+<div class="col-lg-10">
+  <div class="card rounded-0 shadow mt-5 mb-5">
+    <div class="card-body">
+    <% if notice.present? %>
+      <p class="alert alert-primary"><%= notice %></p>
+    <% end %> 
+    <h1>Course Details</h1>
+
+    <p><strong>Name: </strong><%= @course.name %></p>
+    <p><strong>Description: </strong><%= @course.description %></p>
+    <p><strong>Content: </strong><%= @course.content %></p>
+
+    <%= link_to 'Back to courses', admin_courses_path, class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_admin_course_path(@course), class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>
+

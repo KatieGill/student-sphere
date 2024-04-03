@@ -1,0 +1,42 @@
+<div class="col-lg-10">
+  <% if notice.present? %>
+    <p class="alert alert-primary"><%= notice %></p>
+  <% end %>
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h1>Students</h1>
+    <%= link_to 'New Student', new_admin_student_path, class: "btn btn-primary mb-2" %>
+  </div>
+  <%= search_form_for @q, url: :admin_students do |form| %>
+    <div class="d-flex align-items-end mb-2" style="gap: 10px;">
+      <div class="form-group">
+        <%= form.label :first_name_or_last_name_or_email, "Search by first name, last name, or email" %>
+        <%= form.search_field :first_name_or_last_name_or_email_cont, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.submit class: "btn btn-primary" %>
+      </div>
+      <div class="form-group">
+        <%= link_to "Clear Search", request.path, class:"btn btn-secondary" %>
+      </div>
+    </div>
+  <% end %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th colspan="3">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @students.each do |student| %>
+          <tr>
+            <td><%= student.name_with_email%></td>
+            <td><%= link_to 'View', admin_student_path(student), class: "btn btn-success" %></td>
+            <td><%= link_to 'Edit', edit_admin_student_path(student), class: "btn btn-warning" %></td>
+            <td><%= link_to 'Delete', admin_student_path(student), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger" %></td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
+    <%= paginate @students %>
+</div>

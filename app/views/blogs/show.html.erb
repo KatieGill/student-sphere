@@ -1,0 +1,16 @@
+<div class="col-lg-10">
+  <div class="card rounded-0 shadow mt-5 mb-5">
+    <div class="card-body">
+    <% if notice.present? %>
+      <p class="alert alert-primary"><%= notice %></p>
+    <% end %> 
+    <h1>Blog Details</h1>
+
+    <p><strong>Title: </strong><%= @blog.title %></p>
+    <p><strong>Content: </strong><%= @blog.content %></p>
+
+    <%= link_to 'Back to blogs', blogs_path, class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>

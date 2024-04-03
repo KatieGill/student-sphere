@@ -1,0 +1,36 @@
+<div class="position-relative">
+  <div class="d-flex flex-column flex-shrink-0 p-3 bg-light position-fixed top-0 left-0" style="width: 280px; height: 100vh;">
+    <a href="/admin/dashboard" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-4">Student Sphere Dashboard</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <%= link_to "Students", admin_students_path, class: "nav-link" %>
+      </li>
+      <li>
+        <%= link_to "Courses", admin_courses_path, class: "nav-link"%>
+      </li>
+      <li>
+        <%= link_to "Projects", admin_projects_path, class: "nav-link"%>
+      </li>
+      <li>
+        <%= link_to "Blogs", admin_blogs_path, class: "nav-link"%>
+      </li>
+    </ul>
+    <hr>
+    <div class="dropup-center dropdown" style="margin-bottom: 5rem">
+      <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>AdminUser</strong>
+      </a>
+      <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><%= link_to "Sign out", destroy_admin_user_session_path, data: {turbo_method: :delete }, class: "dropdown-item"%></li>
+      </ul>
+    </div>
+  </div>
+</div>

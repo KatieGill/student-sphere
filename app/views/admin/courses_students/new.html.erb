@@ -1,0 +1,21 @@
+<div class="col-lg-8 mx-auto">
+  <h1>Register Student for Selected Course</h1>
+
+  <%# <%= render "form", course: @course, courses_students: @course.courses_students %> %>
+  <%= form_with(model: [:admin, @courses_students]) do |form|%>
+ <%= render "admin/shared/error", model: courses_students %>
+ 
+  <div class="form-group mb-3">
+    <%= form.label :student_id %>
+    <%= form.number_field :student_id, class: "form-control form-control-lg" %>
+  </div>
+  <div class="form-group">
+    <%= form.submit class: "btn btn-primary my-2" %>
+  </div>
+  
+  <%end%>
+  <div>
+     <%= link_to "Back to course", admin_course_path(@course), class: "btn btn-secondary" %>
+  </div>
+
+</div>

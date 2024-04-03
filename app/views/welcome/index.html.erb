@@ -1,0 +1,14 @@
+<div class="col-lg-12 col-md-12">
+  <div class="bg-light p-5 rounded-lg m-3">
+  <h1 class="display-4">Student Sphere</h1>
+  <p class="lead">Empowering education, one sphere at a time!</p>
+  <hr class="my-4">
+  <p>An encompassing space where all aspects of student life and education are managed and organized.</p>
+  <% if admin_user_signed_in? %>
+    <%= link_to "Dashboard", admin_dashboard_path, class: "btn btn-primary btn-lg" %>
+  <% else %>
+    <%= link_to "Sign In", new_admin_user_session_path, class: "btn btn-primary btn-lg" %>
+  <% end %>
+  
+</div>
+</div>
